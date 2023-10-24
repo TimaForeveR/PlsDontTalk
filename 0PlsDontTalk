@@ -1,0 +1,24 @@
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+
+local Window = OrionLib:MakeWindow({Name = "Pls Dont Talk Script"})
+
+local Tab = Window:MakeTab({
+  Name = "Main",
+  Icon = "rbxassetid://4483345998"
+})
+
+Tab:AddToggle({
+  Name = "Auto Collect Candy",
+  Default = false,
+  Callback = function(Value)
+  CandyCollect = Value
+while CandyCollect do
+for i, part in pairs(game.Workspace.CandySpawns:GetChildren()) do
+    if part:IsA("BasePart") then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame
+        wait(0.1)
+    end
+end
+end
+end
+})
