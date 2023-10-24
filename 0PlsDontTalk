@@ -1,6 +1,11 @@
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+ Title = "The script worked!";
+ Text = "t.me/MyletakyKey";
+ Icon = "rbxthumb://type=Asset&id=15079285367&w=150&h=150"})
+Duration = 10;
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 
-local Window = OrionLib:MakeWindow({Name = "Pls Dont Talk Script"})
+local Window = OrionLib:MakeWindow({Name = "TimaForeveR | Pls Dont Talk"})
 
 local Tab = Window:MakeTab({
   Name = "Main",
