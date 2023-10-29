@@ -1,11 +1,6 @@
-game:GetService("StarterGui"):SetCore("SendNotification", { 
- Title = "The script worked!";
- Text = "t.me/MyletakyKey";
- Icon = "rbxthumb://type=Asset&id=15079285367&w=150&h=150"})
-Duration = 10;
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 
-local Window = OrionLib:MakeWindow({Name = "TimaForeveR | Pls Dont Talk"})
+local Window = OrionLib:MakeWindow({Name = "TimaForeveR | PLS DONT TALK"})
 
 local Tab = Window:MakeTab({
   Name = "Main",
@@ -13,7 +8,7 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddToggle({
-  Name = "Auto Collect Candy",
+  Name = "Auto Collect CandyCorn",
   Default = false,
   Callback = function(Value)
   CandyCollect = Value
@@ -25,5 +20,16 @@ for i, part in pairs(game.Workspace.CandySpawns:GetChildren()) do
     end
 end
 end
+end
+})
+
+Tab:AddButton({
+  Name = "Anti Afk",
+  Callback = function() 
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
 end
 })
